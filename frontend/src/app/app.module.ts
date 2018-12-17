@@ -5,28 +5,26 @@ import { WebService } from './web.service';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { MessagesComponent } from './messages.component'
-
+import { NewMessageComponent } from './new-message.component';
 
 import {
   MatButtonModule,
   MatCardModule,
   MatInputModule,
   MatSnackBarModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatFormFieldModule
 } from '@angular/material';
-
-
-
 
 @NgModule({
   declarations: [
-    AppComponent, MessagesComponent
+    AppComponent, MessagesComponent, NewMessageComponent
   ],
   imports: [
     HttpModule, BrowserModule, BrowserAnimationsModule,
     MatButtonModule, MatCardModule,
     MatInputModule, MatSnackBarModule,
-    MatToolbarModule
+    MatToolbarModule, MatFormFieldModule
   ],
   providers: [WebService],
   bootstrap: [AppComponent]

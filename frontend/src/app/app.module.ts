@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { MessagesComponent } from './messages.component'
 import { NewMessageComponent } from './new-message.component';
+import { FormsModule } from '@angular/forms';
+
 
 import {
   MatButtonModule,
@@ -13,7 +15,7 @@ import {
   MatInputModule,
   MatSnackBarModule,
   MatToolbarModule,
-  MatFormFieldModule
+  MatFormFieldModule,
 } from '@angular/material';
 
 @NgModule({
@@ -24,7 +26,8 @@ import {
     HttpModule, BrowserModule, BrowserAnimationsModule,
     MatButtonModule, MatCardModule,
     MatInputModule, MatSnackBarModule,
-    MatToolbarModule, MatFormFieldModule
+    MatToolbarModule, MatFormFieldModule, FormsModule
+
   ],
   providers: [WebService],
   bootstrap: [AppComponent]

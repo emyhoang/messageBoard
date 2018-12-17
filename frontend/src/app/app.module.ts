@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { MessagesComponent } from './messages.component'
 import { NewMessageComponent } from './new-message.component';
 import { FormsModule } from '@angular/forms';
+import { NavComponent } from './nav.component';
+
 
 
 import {
@@ -20,7 +22,8 @@ import {
 
 @NgModule({
   declarations: [
-    AppComponent, MessagesComponent, NewMessageComponent
+    AppComponent, MessagesComponent, NewMessageComponent,
+    NavComponent
   ],
   imports: [
     HttpModule, BrowserModule, BrowserAnimationsModule,

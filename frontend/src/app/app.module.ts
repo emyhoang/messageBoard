@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { MessagesComponent } from './messages.component'
 import { NewMessageComponent } from './new-message.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavComponent } from './nav.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
@@ -49,7 +49,7 @@ var routes = [{
     HttpModule, BrowserModule, BrowserAnimationsModule,
     MatButtonModule, MatCardModule,
     MatInputModule, MatSnackBarModule,
-    MatToolbarModule, MatFormFieldModule, FormsModule, RouterModule.forRoot(routes)
+    MatToolbarModule, MatFormFieldModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes)
 
   ],
   providers: [WebService],

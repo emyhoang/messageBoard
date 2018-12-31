@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { NavComponent } from './nav.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
+import { RegisterComponent } from './register.component';
+
 import {
   MatButtonModule,
   MatCardModule,
@@ -31,13 +33,17 @@ var routes = [{
 {
   path: 'messages',
   component: MessagesComponent
+},
+{
+  path: 'register',
+  component: RegisterComponent
 }];
 
 
 @NgModule({
   declarations: [
     AppComponent, MessagesComponent, NewMessageComponent,
-    NavComponent, HomeComponent
+    NavComponent, HomeComponent, RegisterComponent
   ],
   imports: [
     HttpModule, BrowserModule, BrowserAnimationsModule,

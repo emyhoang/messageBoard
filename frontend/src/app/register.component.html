@@ -2,23 +2,25 @@
   <mat-card-content>
     <form [formGroup]="form" (submit)="onSubmit()">
       <mat-form-field>
-        <input matInput placeholder="First Name" formControlName="firstName">
+        <input matInput placeholder="First Name" [ngClass]="{'error': isValid('firstName')}" formControlName="firstName">
       </mat-form-field>
       <br />
       <mat-form-field>
-        <input matInput placeholder="Last Name" formControlName="lastName">
+        <input matInput placeholder="Last Name" [ngClass]="{'error': isValid('lastName')}" formControlName="lastName">
       </mat-form-field>
       <br />
       <mat-form-field>
-        <input type="email" matInput placeholder="Email" formControlName="email">
+        <input type="email" matInput placeholder="Email" [ngClass]="{'error': isValid('email')}" formControlName="email">
       </mat-form-field>
       <br />
       <mat-form-field>
-        <input type="password" matInput placeholder="Password" formControlName="password">
+        <input type="password" [ngClass]="{'error': isValid('password')}" matInput placeholder="Password"
+          formControlName="password">
       </mat-form-field>
       <br />
       <mat-form-field>
-        <input type="password" matInput placeholder="Confirm Password" formControlName="confirmPassword">
+        <input type="password" matInput placeholder="Confirm Password" [ngClass]="{'error': isValid('confirmPassword')}"
+          formControlName="confirmPassword">
       </mat-form-field>
       <br />
       <button mat-raised-button color="primary">Register</button>

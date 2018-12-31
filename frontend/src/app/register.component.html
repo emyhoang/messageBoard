@@ -23,6 +23,8 @@
           formControlName="confirmPassword">
       </mat-form-field>
       <br />
+      <span *ngIf="form.errors?.mismatchedFields">Passwords do not match</span>
+      <br /><br />
       <button mat-raised-button color="primary">Register</button>
     </form>
   </mat-card-content>

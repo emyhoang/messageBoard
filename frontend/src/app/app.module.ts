@@ -8,9 +8,8 @@ import { MessagesComponent } from './messages.component'
 import { NewMessageComponent } from './new-message.component';
 import { FormsModule } from '@angular/forms';
 import { NavComponent } from './nav.component';
-
-
-
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './home.component';
 import {
   MatButtonModule,
   MatCardModule,
@@ -20,16 +19,27 @@ import {
   MatFormFieldModule,
 } from '@angular/material';
 
+
+var routes = [{
+  path: '',
+  component: HomeComponent
+},
+{
+  path: 'messages',
+  component: MessagesComponent
+}];
+
+
 @NgModule({
   declarations: [
     AppComponent, MessagesComponent, NewMessageComponent,
-    NavComponent
+    NavComponent, HomeComponent
   ],
   imports: [
     HttpModule, BrowserModule, BrowserAnimationsModule,
     MatButtonModule, MatCardModule,
     MatInputModule, MatSnackBarModule,
-    MatToolbarModule, MatFormFieldModule, FormsModule
+    MatToolbarModule, MatFormFieldModule, FormsModule, RouterModule.forRoot(routes)
 
   ],
   providers: [WebService],

@@ -7,7 +7,7 @@ import { WebService } from './web.service';
     `<div *ngFor= "let message of webService.messages"> 
       <mat-card class='card'>
         <mat-card-title> {{ message.owner }} </mat-card-title>
-        <mat-card-content> {{ message.title }} </mat-card-content>
+        <mat-card-content> {{ message.text }} </mat-card-content>
       </mat-card>
     <div>
     `

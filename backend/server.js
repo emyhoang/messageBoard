@@ -38,7 +38,7 @@ auth.post('/register', (req, res) => {
   user.id = index;
   // When using a database, use user.id instead of index of user array
   var token = jwt.sign(user.id, '123');
-  res.json(token);
+  res.json({ firstName: user.firstName, token });
 })
 
 app.use('/api', api);

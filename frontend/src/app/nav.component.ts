@@ -1,4 +1,6 @@
 import { Component } from '@angular/core'
+import { AuthService } from './auth.service';
+
 
 @Component({
   selector: 'nav',
@@ -6,10 +8,12 @@ import { Component } from '@angular/core'
         <mat-toolbar color="primary">
         <button mat-button routerLink="/" >Message Board</button>
         <button mat-button routerLink="/messages" >Messages</button>
+        <span style="flex: 1 1 auto"></span>
         <button mat-button routerLink="/register" >Register</button>
+        <button *ngIf="auth.isAuthenticated" mat-button routerLink="/register" >Welcome {{auth.name}}</button>                                    
         </mat-toolbar>
     `
 })
 export class NavComponent {
-  constructor() { }
+  constructor(private auth: AuthService) { }
 }

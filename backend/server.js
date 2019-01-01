@@ -3,6 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 
 var messages = [{ test: 'some text', owner: 'Tim' }, { text: 'other message', owner: 'Jane' }];
+var users = [];
 
 app.use(bodyParser.json());
 app.use((req, res, next) => {
@@ -12,6 +13,8 @@ app.use((req, res, next) => {
 })
 
 var api = express.Router();
+var auth = express.Router();
+
 
 api.get('/messages', (req, res) => {
   res.json(messages);
@@ -28,6 +31,13 @@ api.post('/messages', (req, res) => {
   res.json(req.body);
 })
 
+auth.post('/register', (req, res) => {
+  // console.log(req.body);
+  users.push(req.body);
+})
+
 app.use('/api', api);
+app.use('/auth', auth);
+
 
 app.listen(63145);

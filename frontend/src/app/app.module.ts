@@ -12,6 +12,8 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { RegisterComponent } from './register.component';
 import { AuthService } from './auth.service';
+import { LoginComponent } from './login.component';
+
 
 
 import {
@@ -39,13 +41,17 @@ var routes = [{
 {
   path: 'register',
   component: RegisterComponent
+},
+{
+  path: 'login',
+  component: LoginComponent
 }];
 
 
 @NgModule({
   declarations: [
     AppComponent, MessagesComponent, NewMessageComponent,
-    NavComponent, HomeComponent, RegisterComponent
+    NavComponent, HomeComponent, RegisterComponent, LoginComponent
   ],
   imports: [
     HttpModule, BrowserModule, BrowserAnimationsModule,

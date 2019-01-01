@@ -11,6 +11,8 @@ import { NavComponent } from './nav.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { RegisterComponent } from './register.component';
+import { AuthService } from './auth.service';
+
 
 import {
   MatButtonModule,
@@ -52,7 +54,7 @@ var routes = [{
     MatToolbarModule, MatFormFieldModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes)
 
   ],
-  providers: [WebService],
+  providers: [WebService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

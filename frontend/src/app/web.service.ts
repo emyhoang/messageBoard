@@ -4,6 +4,8 @@ import { Http } from '@angular/http';
 import { Subject } from 'rxjs';
 import { MatSnackBar } from '@angular/material';
 import { AuthService } from './auth.service';
+import { map } from 'rxjs/operators';
+
 
 
 
@@ -45,7 +47,7 @@ export class WebService {
   }
 
   getUser() {
-    return this.http.get(this.BASE_URL + 'users/me', this.auth.tokenHeader).map(res => res.json());
+    return this.http.get(this.BASE_URL + '/users/me', this.auth.tokenHeader).pipe(map(res => res.json()));
   }
 
   private handleError(error) {

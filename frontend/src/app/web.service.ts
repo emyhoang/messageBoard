@@ -3,6 +3,8 @@ import { Http } from '@angular/http';
 // import 'rxjs/add/operator/toPromise';
 import { Subject } from 'rxjs';
 import { MatSnackBar } from '@angular/material';
+import { AuthService } from './auth.service';
+
 
 
 
@@ -17,7 +19,8 @@ export class WebService {
   messages = this.messageSubjet.asObservable();
 
 
-  constructor(private http: Http, private sb: MatSnackBar) {
+  constructor(private http: Http, private sb: MatSnackBar,
+    private auth: AuthService) {
     this.getMessages(null);
   }
 
@@ -39,6 +42,10 @@ export class WebService {
     } catch (error) {
       this.handleError("Unable to post message");
     }
+  }
+
+  getUser() {
+    return this.http.get(this.BASE_URL + 'users/me', this.auth.tokenHeader).map(res => res.json());
   }
 
   private handleError(error) {
